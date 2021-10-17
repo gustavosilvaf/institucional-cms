@@ -34,7 +34,7 @@ export const theme = extendTheme({
             warning: '#ffc107',
             danger: '#f5365c',
             light: '#f8f9fa',
-            dark: '#343a40',
+            dark: '#1f2229',
             success: '#2dce89',
         },
     },
