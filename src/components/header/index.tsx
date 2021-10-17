@@ -27,7 +27,6 @@ export const Header = () => {
         lg: true,
     });
 
-    // @ts-ignore
     return (
         <Box w="100%" py="6" bg="brand.dark" display="flex">
             {!isWideVersion && (
