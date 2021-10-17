@@ -1,3 +1,126 @@
 {
-  "extends": "next/core-web-vitals"
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".ts",
+            ".tsx"
+          ]
+        }
+      },
+      "import/extensions": [
+        ".js",
+        ".mjs",
+        ".jsx",
+        ".ts",
+        ".tsx"
+      ]
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint",
+        "react-hooks"
+    ],
+    "rules": {
+      "linebreak-style": "off",
+      "indent": ["error", 4],
+      "react/jsx-indent": ["error", 4],
+      "react/jsx-indent-props": ["error", 4],
+      "react/jsx-one-expression-per-line": "off",
+      "react/react-in-jsx-scope": "off",
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx", ".ts"] }],
+      "react/sort-comp": "off",
+      "import/no-named-as-default": 0,
+      "import/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "js": "never",
+          "mjs": "never",
+          "jsx": "never",
+          "ts": "never",
+          "tsx": "never"
+        }
+      ],
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      "complexity": ["error", 6],
+      "max-depth": ["error", 4],
+      "import/prefer-default-export": 0,
+      "jsx-a11y/label-has-associated-control": 0,
+      "max-lines": ["error", { "max": 300, "skipBlankLines": true }],
+      "no-use-before-define": "off",
+      "react/jsx-props-no-spreading": "off"
+    },
+    "overrides": [
+      {
+        "files": ["dangerfile.js"],
+        "globals": {
+          "danger": "readonly",
+          "warn": "readonly",
+          "fail": "readonly",
+          "schedule": "readonly",
+          "markdown": "readonly"
+        }
+      },
+      {
+        "files": ["*.ts", "*.tsx"],
+        "parser": "@typescript-eslint/parser",
+        "plugins": ["@typescript-eslint"],
+        "rules": {
+          "@typescript-eslint/no-unused-vars": [2, { "args": "none" }]
+        }
+      },
+      {
+        "files": ["*.stories.js"],
+        "rules": {
+          "no-bitwise": "off",
+          "import/no-extraneous-dependencies": ["error", { "devDependencies":  true }]
+        }
+      },
+      {
+        "files": [
+          "*.test.js",
+          "*.test.tsx",
+          "*.test.ts",
+          "*.tests.js",
+          "*.tests.tsx",
+          "*.tests.ts"
+        ],
+        "rules": {
+          "no-shadow": "off",
+          "import/no-extraneous-dependencies": ["error", { "devDependencies":  true }]
+        },
+        "globals": {
+          "mount": "readonly",
+          "shallow": "readonly",
+          "toJson": "readonly",
+          "flushPromises": "readonly"
+        }
+      },
+      {
+        "files": ["dangerfile.js"],
+        "rules": {
+          "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+        }
+      }
+    ]
 }
