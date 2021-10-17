@@ -1,3 +1,3 @@
 export default function Home() {
-    return <h1>Institucional cms</h1>;
+    return <h1>Institutional cms</h1>;
 }
