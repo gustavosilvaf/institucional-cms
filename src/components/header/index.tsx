@@ -43,15 +43,12 @@ export const Header = () => {
             <Flex justify="space-between" px="4" maxW={1480} mx="auto" align="center" width={isWideVersion ? '100%' : 'auto'}>
 
                 <Box display="flex">
-
                     <Link href="/" _hover={{ cursor: 'pointer' }}>
                         <Text fontWeight="bold" fontSize="32">InstitutionalCMS
                             <Text as="span" pl="2" color="brand.primary">.</Text>
                         </Text>
                     </Link>
-
                 </Box>
-
                 {!isWideVersion && (
                     <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
                         <DrawerOverlay>
@@ -74,7 +71,6 @@ export const Header = () => {
                         </DrawerOverlay>
                     </Drawer>
                 )}
-
                 {isWideVersion && (
                     <Stack spacing="8" direction="row">
                         {MENU_ITEMS.map((item) => (
@@ -82,7 +78,6 @@ export const Header = () => {
                         ))}
                     </Stack>
                 )}
-
             </Flex>
         </Box>
     );
